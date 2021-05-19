@@ -20,33 +20,13 @@ import it.epicode.be.model.Salami;
 
 @SpringBootApplication
 public class GodfathersPizzaApplication {
-	
-	public static  ApplicationContext ctx;
+
+	public static ApplicationContext ctx;
 
 	public static void main(String[] args) {
 		SpringApplication.run(GodfathersPizzaApplication.class, args);
-		
+
 		ctx = new AnnotationConfigApplicationContext(MenuConigurazione.class);
-		
-	
-		
-	//	PizzaMargherita p = ctx.getBean(PizzaMargherita.class);
-		//Cheese c = ctx.getBean(Cheese.class);
-		//PizzaHawaii h = ctx.getBean(PizzaHawaii.class);
-		//Mojito d = (Mojito) ctx.getBean(Drink.class);
-		//Mug de = ctx.getBean(Mug.class);
-		//Onion n = ctx.getBean(Onion.class);
-		//Salami s = (Salami) ctx.getBean("Salami");
-		
-	//	m.aggiungiFoodItem(s);
-	//	m.aggiungiFoodItem(p);
-	//	m.aggiungiFoodItem(c);
-	//	m.aggiungiFoodItem(n);
-	//	m.aggiungiFoodItem(h);
-	//	m.aggiungiFoodItem(d);
-	//	m.aggiungiItem(de);
-	//	m.stampa();
-			
-		
-}
+
+	}
 }

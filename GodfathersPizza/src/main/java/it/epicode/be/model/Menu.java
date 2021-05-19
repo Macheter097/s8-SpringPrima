@@ -3,23 +3,27 @@ package it.epicode.be.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menu {
+import org.slf4j.LoggerFactory;
 
+public class Menu {
+	org.slf4j.Logger log = LoggerFactory.getLogger(getClass());
 	private List<MenuItem> elenco = new ArrayList<MenuItem>();
 	private List<FoodItem> elencoOrdinabili = new ArrayList<FoodItem>();
 
 	public void stampa() {
-		System.out.println("Nome"+ "\t\t" + "\t\t" + "Prezzo" + "\t\t"+  "Calorie");
+		log.info("---------------------Menu------------------------------------------");
+		log.info("Nome"+ "\t\t" + "\t\t" + "Prezzo" + "\t\t"+  "Calorie" + "\n");
 		for (FoodItem m : elencoOrdinabili) {
 			
-			System.out.println(m.getName()+ "\t\t" + m.getPrezzo()+ "\t\t" + m.getCalories());
+			log.info(m.getName()+ "\t\t" + m.getPrezzo()+ "\t\t" + m.getCalories());
 		}	
 		
-		System.out.println("Franchise");
+		log.info("Franchise");
+		log.info("Nome"+ "\t\t" + "\t\t" + "Prezzo" + "\n" );
 		for (MenuItem m : elenco) {
-			System.out.println(m.getName()+ "\t\t" + m.getPrezzo()+ "\t\t" );
+			log.info(m.getName()+ "\t\t" + m.getPrezzo()+ "\t\t" );
 		}
-		
+		log.info("-----------------------------------------------------------------------");
 			
 		
 		

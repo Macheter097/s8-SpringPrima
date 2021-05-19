@@ -2,6 +2,10 @@ package it.epicode.be.model;
 
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 public class Tavolo {
 	
 	private int numero;
@@ -15,29 +19,9 @@ public class Tavolo {
 		this.statoTavolo=StatoTavolo.OCCUPATO;
 	}
 
-	public int getNumero() {
-		return numero;
-	}
+	
 
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
-	public int getNumCoperti() {
-		return numCoperti;
-	}
-
-	public void setNumCoperti(int numCoperti) {
-		this.numCoperti = numCoperti;
-	}
-
-	public StatoTavolo getStatoTavolo() {
-		return statoTavolo;
-	}
-
-	public void setStatoTavolo(StatoTavolo statoTavolo) {
-		this.statoTavolo = statoTavolo;
-	}
+	
 
 	public List<Ordine> getListaOrdini() {
 		return listaOrdini;

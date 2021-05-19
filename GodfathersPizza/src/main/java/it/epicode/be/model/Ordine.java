@@ -8,6 +8,11 @@ import java.util.logging.Logger;
 
 import org.slf4j.LoggerFactory;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Ordine {
 	org.slf4j.Logger log = LoggerFactory.getLogger(getClass());
 
@@ -27,70 +32,6 @@ public class Ordine {
 		this.tavolo = tavolo;
 	}
 
-	public org.slf4j.Logger getLog() {
-		return log;
-	}
-
-	public void setLog(org.slf4j.Logger log) {
-		this.log = log;
-	}
-
-	public int getNumeroOrdine() {
-		return numeroOrdine;
-	}
-
-	public void setNumeroOrdine(int numeroOrdine) {
-		this.numeroOrdine = numeroOrdine;
-	}
-
-	public StatoOrdine getStato() {
-		return stato;
-	}
-
-	public void setStato(StatoOrdine stato) {
-		this.stato = stato;
-	}
-
-	public int getCoperti() {
-		return coperti;
-	}
-
-	public void setCoperti(int coperti) {
-		this.coperti = coperti;
-	}
-
-	public LocalDateTime getOra() {
-		return ora;
-	}
-
-	public void setOra(LocalDateTime ora) {
-		this.ora = ora;
-	}
-
-	public double getTotaleConto() {
-		return totaleConto;
-	}
-
-	public void setTotaleConto(double totaleConto) {
-		this.totaleConto = totaleConto;
-	}
-
-	public Tavolo getTavolo() {
-		return tavolo;
-	}
-
-	public void setTavolo(Tavolo tavolo) {
-		this.tavolo = tavolo;
-	}
-
-	public int getCostoCoperto() {
-		return costoCoperto;
-	}
-
-	public void setCostoCoperto(int costoCoperto) {
-		this.costoCoperto = costoCoperto;
-	}
-
 	public void aggiungiItemOrdine(MenuItem m) {
 		if (ordini.containsKey(m)) {
 			int quantita = ordini.get(m);
@@ -103,22 +44,26 @@ public class Ordine {
 	}
 
 	public void stampaOrdine() {
-
+		
+		log.info("---------------------------Ordine----------------------------------------------------------");
+		log.info("Nome" + "\t\t\t\t" + "Quantità "+"\t"+ "Prezzo");
 		for (Entry<MenuItem, Integer> or : ordini.entrySet()) {
-			log.info(or.getKey().getName() + " " + or.getValue() + " " + or.getKey().getPrezzo() * or.getValue());
+			log.info(or.getKey().getName() + "\t\t " + or.getValue() + "\t\t " + or.getKey().getPrezzo() * or.getValue());
 
 		}
+		log.info("---------------------------TotaleOrdine----------------------------------------------------");
 		totaleOrdine();
+		log.info("-------------------------------------------------------------------------------------------");
 
 	}
-	
-	public void totaleOrdine () {
-		double somma =0;
+
+	public void totaleOrdine() {
+		double somma = 0;
 		for (MenuItem m : ordini.keySet()) {
-			somma += m.getPrezzo() *ordini.get(m);
+			somma += m.getPrezzo() * ordini.get(m);
 		}
-		
-		log.info("Il totale è:"+somma);
+
+		log.info("\t\t\t\t\t" + "Il numero degli elementi è:" + " " + ordini.size() + "\n"+ "\t\t\t\t\t\t\t"+ "Il totale è:"+ " " + somma);
 	}
 
 }

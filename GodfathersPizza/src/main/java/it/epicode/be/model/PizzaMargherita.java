@@ -14,7 +14,7 @@ public class PizzaMargherita implements PizzaBase {
 
 	@Override
 	public String getName() {
-		return "Pizza Margherita";
+		return "Pizza Margherita" + "\t";
 	}
 
 }

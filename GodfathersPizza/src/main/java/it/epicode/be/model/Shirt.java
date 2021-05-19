@@ -11,7 +11,7 @@ public class Shirt implements FranchiseItem{
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "Shirt Ufficiale";
+		return "Shirt Ufficiale" + "\t";
 	}
 	
 

@@ -1,5 +1,10 @@
 package it.epicode.be.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Cheese implements PizzaBase{
 	
 	private PizzaBase pizza;
