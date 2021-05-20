@@ -83,18 +83,18 @@ public class MenuController {
         return "ordine";
     }
 	
-//	@RequestMapping(value="/statoOrdine",method=RequestMethod.POST)
- ///   public String setStatoOrdine(@Valid @ModelAttribute("ordine") Ordine al,BindingResult datiRichiesta,ModelMap modello, @RequestParam int statoOrd ) {
+	@RequestMapping(value="/statoOrdine",method=RequestMethod.POST)
+    public String setStatoOrdine(@Valid @ModelAttribute("ordine") Ordine al,BindingResult datiRichiesta,ModelMap modello, @RequestParam int stato , @RequestParam int numeroOrdine ) {
+        
+        al = m.ordineDaId(numeroOrdine);
+        al.modificaStatoOrdine(stato);
+        modello.addAttribute("statoOrdine", al.getStato().toString() );
+        
         
        
-  //      al.modificaStatoOrdine(statoOrd);
-   //     modello.addAttribute("statoOrdine",al.getCoperti() + al.getTotaleConto() + al.getStato().toString() );
         
-        
-       
-        
-    //    return "ordine";
-   // }
+       return "ordine";
+    }
 	
 	
 }

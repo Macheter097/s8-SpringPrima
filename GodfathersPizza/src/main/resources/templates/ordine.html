@@ -13,13 +13,16 @@
         <form action="#" th:action="@{/statoOrdine}" th:object="${ordine}" method="post">
             <p>
             	inserisci 1 per cambiare lo stato a libero <br>
-            	insersci 2 per cambiare lostato a servito
-                Stato Ordine: <input type="text"  />
+            	insersci 2 per cambiare lostato a servito <br>
+                Stato Ordine: <input type="text" th:field="*{stato}" />
+                
             </p>        
-           
+           <p>
+                Numero Ordine: <input type="text" th:field="*{numeroOrdine}" />
+            </p>   
                 <input type="submit" value="Invia dati!"/>
             </p>
-            
+                 
             
         
         </form>
