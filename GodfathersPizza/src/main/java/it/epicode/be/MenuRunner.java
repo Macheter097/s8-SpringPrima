@@ -42,7 +42,7 @@ public class MenuRunner implements CommandLineRunner{
 		Mojito d = (Mojito) ctx.getBean("getDrink");
 		Mug de = (Mug) ctx.getBean("getMug");
 		Onion n = (Onion) ctx.getBean("getOnion");
-		Salami s = (Salami) ctx.getBean("Salami");
+		Salami s = (Salami) ctx.getBean("getSalami");
 		Shirt ns = (Shirt) ctx.getBean("getShirt");
 		
 		m.aggiungiFoodItem(s);
@@ -59,8 +59,9 @@ public class MenuRunner implements CommandLineRunner{
 		//Blocco Ordine
 		
 		Tavolo t = (Tavolo) ctx.getBean("getTavolo");
+		Tavolo t2 = (Tavolo) ctx.getBean("getTavolo");
 		Ordine o = (Ordine) ctx.getBean("getOrdine");
-		
+		Ordine o2 = (Ordine) ctx.getBean("getOrdine");
 		
 		o.aggiungiItemOrdine(p);
 		o.aggiungiItemOrdine(p);
@@ -70,9 +71,31 @@ public class MenuRunner implements CommandLineRunner{
 		o.aggiungiItemOrdine(h);
 		o.aggiungiItemOrdine(s);
 		
-	o.stampaOrdine();	
+		o2.aggiungiItemOrdine(p);
+		o2.aggiungiItemOrdine(c);
+		o2.aggiungiItemOrdine(c);
+		o2.aggiungiItemOrdine(c);
+		o2.aggiungiItemOrdine(de);
+		o2.aggiungiItemOrdine(h);
+		o2.aggiungiItemOrdine(s);
+		o2.setNumeroOrdine(2);
+		o2.setTavolo(t);
+		t2.setNumero("2");
+		t.setNumero("1");
+		o.setTavolo(t2);
 	
-	//public void addToMap(MenuItem item) {
+	
+	
+	
+	
+
+		
+//	o.stampaOrdine();	
+	
+	m.registraOrdine(o);
+	m.registraOrdine(o2);
+	 Ordine pac = m.ordineDaId(2);
+ pac.stampaOrdine();	//public void addToMap(MenuItem item) {
      //   MenuItem presente = null;
       //  for (MenuItem m : listaOrdini.keySet()) {
        //     if (m.equals(item))

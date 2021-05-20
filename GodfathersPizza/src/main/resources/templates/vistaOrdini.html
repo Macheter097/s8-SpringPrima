@@ -1,0 +1,51 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Il Menu</title>
+<meta http-equiv="Contnt-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Ordini:</h1>
+
+	<p>
+	<div>
+
+		
+
+
+	</div>
+
+
+	<table>
+		<tr align="left">
+			<th>Ordini In corso</th>
+			<th>Tavolo</th>
+			
+
+		</tr>
+		<tr th:each="oggetto: ${ordini.listaOrdini}">
+			<td th:text="${oggetto.numeroOrdine}">
+			<td th:text="${oggetto.tavolo}">
+		
+		</tr>
+		
+		
+
+
+	</table>
+	
+	<form action="#" th:action="@{/numOrdine}" th:object="${ordine}" method="post">
+            <p>
+                Numero Ordine: <input type="text" th:field="*{numeroOrdine}" />
+            </p>        
+           
+                <input type="submit" value="Invia dati!"/>
+            </p>
+            
+            
+        
+        </form>
+	
+	
+	
+</body>
+</html>

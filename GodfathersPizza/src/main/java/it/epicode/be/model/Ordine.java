@@ -32,6 +32,10 @@ public class Ordine {
 		this.tavolo = tavolo;
 	}
 
+	public Ordine() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void aggiungiItemOrdine(MenuItem m) {
 		if (ordini.containsKey(m)) {
 			int quantita = ordini.get(m);
@@ -61,9 +65,20 @@ public class Ordine {
 		double somma = 0;
 		for (MenuItem m : ordini.keySet()) {
 			somma += m.getPrezzo() * ordini.get(m);
+			totaleConto=somma;
 		}
 
 		log.info("\t\t\t\t\t" + "Il numero degli elementi è:" + " " + ordini.size() + "\n"+ "\t\t\t\t\t\t\t"+ "Il totale è:"+ " " + somma);
 	}
+	
+	public void modificaStatoOrdine (int num) {
+		if (num==1) {
+			this.setStato(stato.PRONTO);
+		}
+		else if (num == 2) {
+			this.setStato(stato.SERVITO);
+		}
+	}
+	
 
 }

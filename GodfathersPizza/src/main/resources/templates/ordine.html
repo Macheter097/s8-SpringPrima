@@ -1,0 +1,30 @@
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Dati Ordine</title>
+        <meta http-equiv="Contnt-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Dati Ordine:</h1>
+        
+        <p>
+            <h3> <span th:text="${numeroOrdine}"></span></h3>
+        </p>
+        
+        <form action="#" th:action="@{/statoOrdine}" th:object="${ordine}" method="post">
+            <p>
+            	inserisci 1 per cambiare lo stato a libero <br>
+            	insersci 2 per cambiare lostato a servito
+                Stato Ordine: <input type="text"  />
+            </p>        
+           
+                <input type="submit" value="Invia dati!"/>
+            </p>
+            
+            
+        
+        </form>
+     <p>
+            <h3> <span th:text="${statoOrdine}"></span></h3>
+        </p>
+    </body>
+</html>

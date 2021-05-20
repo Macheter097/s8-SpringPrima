@@ -34,7 +34,7 @@ public class Salami implements PizzaBase {
 		if (pizza == null) {
 			return "Salami" + "\t\t";
 		}
-		return pizza.getName() + "Salami" + "\t";
+		return pizza.getName() + "Salami" + "";
 	}
 
 }

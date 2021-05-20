@@ -1,0 +1,46 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Il Menu</title>
+<meta http-equiv="Contnt-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Menu:</h1>
+
+	<p>
+	<div>
+
+		
+
+
+	</div>
+
+
+	<table>
+		<tr align="left">
+			<th>Pizza & Drink</th>
+			<th>Calories</th>
+			<th>Prezzo</th>
+
+		</tr>
+		<tr th:each="oggetto: ${nomeMenu2.elencoOrdinabili}">
+			<td th:text="${oggetto.name}">
+			<td th:text="${oggetto.calories}">
+			<td th:text="${oggetto.prezzo}">
+		</tr>
+		<tr align="left">
+			<th>Franchaise</th>
+			<th>Prezzo</th>
+
+		</tr>
+		<tr>
+		<tr th:each="oggetto: ${nomeMenu2.elenco}">
+			<td th:text="${oggetto.name}">
+			<td th:text="${oggetto.prezzo}">
+		
+		</tr>
+
+
+	</table>
+
+</body>
+</html>

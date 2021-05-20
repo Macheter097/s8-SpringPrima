@@ -57,7 +57,7 @@ public class MenuConigurazione {
 		return new Salami(new PizzaMargherita());
 
 	}
-	@Bean("Salami")
+	@Bean("soloSalami")
 	@Scope("prototype")
 	PizzaBase getSoloSalami() {
 		return new Salami();
@@ -80,13 +80,13 @@ public class MenuConigurazione {
 		return new Mug();
 	}
 	@Bean
-	@Scope("singleton")
+	@Scope("prototype")
 	Tavolo getTavolo() {
-		return new Tavolo(1,4,StatoTavolo.LIBERO);
+		return new Tavolo("1",4,StatoTavolo.LIBERO);
 	}
 	
 	@Bean
-	@Scope("singleton")
+	@Scope("prototype")
 	Ordine getOrdine() {
 		return new Ordine(1, StatoOrdine.IN_CORSO, getTavolo());
 	}

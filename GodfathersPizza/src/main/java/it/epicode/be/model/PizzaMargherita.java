@@ -1,6 +1,8 @@
 package it.epicode.be.model;
 
 public class PizzaMargherita implements PizzaBase {
+	
+	private String nome;
 
 	@Override
 	public double getPrezzo() {
